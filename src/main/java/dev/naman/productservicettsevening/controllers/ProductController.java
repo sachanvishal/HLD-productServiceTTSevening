@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/products")
+@RequestMapping("/products") // By adding this prefix in begining of controller class, we no need to add "/products" in all the API.
 public class ProductController {
 
     private ProductService productService;
