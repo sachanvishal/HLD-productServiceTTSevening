@@ -76,6 +76,8 @@ public class ProductController {
     }
 
     @GetMapping("/{productId}")
+    // @PathVariable("productId")-Read the variable from pathavriable "@GetMapping("/{productId}")" and put its value to local param "Long productId"
+    //This productId will recieve from URL  /// edit by me
     public ResponseEntity<Product> getSingleProduct(@PathVariable("productId") Long productId) throws NotFoundException {
         MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
 
@@ -113,8 +115,18 @@ public class ProductController {
 
 //        return responseDto;
     }
-
-
+    
+    /*{
+"id": 0,
+"title": "string",
+"price": 0.1,
+"description": "string",
+"category": "string",
+"image": "http://example.com"
+} 
+    Fakestory Post api has these parameter, which we have to send in body along with POST request, so we don't have any object ( Models which has all these fields, may be these fields belong to many models class) 
+    which has all these data (remember LLD class DTO concept), so we have to create DTO.
+    ////Edit by me */
     @PostMapping()
     public ResponseEntity<Product> addNewProduct(@RequestBody ProductDto product) {
 
